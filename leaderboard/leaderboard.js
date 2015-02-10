@@ -5,7 +5,7 @@ if(Meteor.isClient) {
 
     Template.leaderboard.helpers( {
         'player': function() {
-            return "From player function()...";
+            return PlayerList.find();
         },
         'manager': function() {
             return "From manager function()..."

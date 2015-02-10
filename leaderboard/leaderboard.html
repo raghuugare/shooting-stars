@@ -8,5 +8,7 @@
 </body>
 
 <template name="leaderboard">
-  {{ manager }}
+  {{#each player}}
+     <p>{{name}} -- {{score}}</p>
+  {{/each}}
 </template>
