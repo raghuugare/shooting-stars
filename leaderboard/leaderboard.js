@@ -7,15 +7,22 @@ if(Meteor.isClient) {
         'player': function() {
             return PlayerList.find();
         },
-        'manager': function() {
-            return "From manager function()..."
+        'selectedClass': function() {
+            var playerId = this._id;
+            var selectedPlayerId = Session.get('selectedPlayer');
+            if(playerId == selectedPlayerId) {
+                return "selected"
+            }
         }
     });
 
 
     Template.leaderboard.events({
-        'click .player':function() {
-            console.log("You clicked on a player.list element...");
+        'click .player': function() {
+            var playerId = this._id;
+            Session.set('selectedPlayer', playerId);
+            var selectedPlayer = Session.get('selectedPlayer');
+            console.log(selectedPlayer);
         }
     });
     
