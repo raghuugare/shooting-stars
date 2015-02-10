@@ -1,4 +1,25 @@
 /* CSS declarations go here */
+body {
+    font-family: seravek, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+}
+
 .selected {
     background-color: yellow;
+    font-weight: 300;
+    font-family: Optima;
+    font-size: 22px;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th,td {
+    padding: 15px;
+}
+
+th {
+    background-color: #d4d4d4;
 }
