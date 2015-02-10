@@ -21,11 +21,11 @@
     </tr>
     {{/each}}
   </table>
-  <p>
   {{#if showSelectedPlayer}}
   <input type="button" class="increment" value="Give 5 points" />
   <input type="button" class="decrement" value="Take 5 points" />
-   Selected Player : {{showSelectedPlayer.name}}
-  {{/if}}
+  <p>
+    Selected Player : {{showSelectedPlayer.name}}
   </p>
+  {{/if}}
 </template>
