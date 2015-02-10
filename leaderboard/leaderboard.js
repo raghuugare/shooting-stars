@@ -11,6 +11,14 @@ if(Meteor.isClient) {
             return "From manager function()..."
         }
     });
+
+
+    Template.leaderboard.events({
+        'click.player':function() {
+            console.log("You clicked on a player.list element...");
+        }
+    });
+    
     
 }
 
