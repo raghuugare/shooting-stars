@@ -14,7 +14,7 @@ if(Meteor.isClient) {
 
 
     Template.leaderboard.events({
-        'click.player':function() {
+        'click .player':function() {
             console.log("You clicked on a player.list element...");
         }
     });
