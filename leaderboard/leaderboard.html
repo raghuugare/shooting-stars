@@ -9,14 +9,14 @@
 
 <template name="leaderboard">
   <table>
-    <th align="center">
+    <th>
       Player
     </th>
     <th>
       Score
     </th>
     {{#each player}}
-    <tr align="left" class="player {{selectedClass}}">
+    <tr class="player {{selectedClass}}">
       <td>{{name}} </td><td>{{score}}</td>
     </tr>
     {{/each}}

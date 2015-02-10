@@ -17,8 +17,10 @@ table, th, td {
 }
 
 th,td {
+    text-align: center;
     padding: 15px;
 }
+
 
 th {
     background-color: #d4d4d4;
