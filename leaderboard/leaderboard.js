@@ -38,6 +38,12 @@ if(Meteor.isClient) {
         }
     });
     
+    Template.addPlayerForm.events({
+        'submit form': function() {
+            console.log('Form submitted');
+        }
+    });
+
     
 }
 
