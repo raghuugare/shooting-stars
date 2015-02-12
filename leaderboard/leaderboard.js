@@ -52,6 +52,7 @@ if(Meteor.isClient) {
             PlayerList.insert( {
                 name: pName,
                 score: 0});
+            event.target.playerName.value = '';
         }
     });
 
