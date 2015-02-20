@@ -6,7 +6,8 @@ body {
 }
 
 .selected {
-    background-color: lightyellow;
+    background-color: yellow;
+    font-color: red;
     font-weight: 300;
     font-family: Optima;
     font-size: 22px;
