@@ -14,6 +14,24 @@ if(Meteor.isClient) {
                 return "selected"
             }
         },
+        'mouseenterClass' : function() {
+            var playerId = this._id;
+            var selectedPlayerId = Session.get('selectedPlayer');
+            if(playerId !== selectedPlayerId && playerId === Session.get('mouseOnId')) {
+                return "mouseenter"
+            }
+        },
+       /* 'mouseleaveClass' : function() {
+            var playerId = this._id;
+            var selectedPlayerId = Session.get('selectedPlayer');
+            if(playerId !== selectedPlayerId) {
+                return "mouseleave"
+            }
+        }*/
+        'mouseOnPlayer' : function() {
+            var mouseOnPlayerId = Session.get('mouseOnId');
+            return PlayerList.findOne(mouseOnPlayerId);
+        },
         'showSelectedPlayer': function() {
             var selectedPlayer = Session.get('selectedPlayer');
             return PlayerList.findOne(selectedPlayer);
@@ -27,6 +45,12 @@ if(Meteor.isClient) {
             Session.set('selectedPlayer', playerId);
             var selectedPlayer = Session.get('selectedPlayer');
             console.log(selectedPlayer);
+        },
+        'mouseenter .player': function() {
+            Session.set('mouseOnId', this._id);
+        },
+        'mouseleave .player': function() {
+            Session.set('mouseOnId', null);
         },
         'click .increment': function() {
             var selectedPlayer = Session.get('selectedPlayer');
@@ -51,12 +75,15 @@ if(Meteor.isClient) {
         'submit form': function(event) {
             event.preventDefault();
             var pName = event.target.playerName.value;
+            var currentUserId = Meteor.userId();
             console.log('Form submitted');
             console.log(event.type);
             console.log("player name submitted is ["+ pName +"]");
             PlayerList.insert( {
                 name: pName,
-                score: 0});
+                score: 0,
+                createdBy: currentUserId
+            });
             event.target.playerName.value = '';
         }
     });

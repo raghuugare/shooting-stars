@@ -28,3 +28,11 @@ th {
     font-size: 24px;
     font-family: Menlo;
 }
+
+.mouseenter {
+    font-size: 24px;
+}
+
+.mouseleave {
+    font-size: 18px;
+}
